@@ -28,44 +28,33 @@ switch (option)
          case 2:
             break;
          case 3:
-            
-               BufferedReader br;
-               br=new BufferedReader(new InputStreamReader(System.in));
+         double sumar=0;
+         int y;
+         Scanner leer=new Scanner(System.in);
+             System.out.println("Dame el numero de valores que usaras");
+             y= leer.nextInt();
+           
+            for(int i=0;i<y;i++)
+            {
+                System.out.println("dame valor");
+                double var1 =leer.nextInt();
+                
+                sumar=sumar+var1;
 
-          System.out.println("Cuantos numeros va  a ingresar :");
-          int n=Integer.parseInt(br.readLine());
-          System.out.println("Usted ingresara " + n + " numeros");
-          int datos[]= new int[n];
-          System.out.println("Ingrese los numeros :"  );
-          for(int i=0;i<n;i++)
-          {
-               datos[i]=Integer.parseInt(br.readLine()); 
-           }
-
-          for(int i=0;i<n-1;i++) 
-             {
-                int min=i;
-            for(int j=i+1;j<n;j++)     
-              {
-                       if(datos[j]<datos[min])      
-                       {
-                       min=j;
-                        }
-               }
-                  if(i!=min)
-                  {
-                       int aux =datos[i];
-                       datos[i]=datos[min];
-                       datos[min] = aux;
-                   }
             }
-          System.out.println("Los numeros de menor a manor son :");
-          for(int k=0; k<n;k++)
-
-            System.out.println(datos[k] + "  ");
-    
-
-   
+              double aux;
+              boolean cambios=false;
+              for(int i=1;i<array.length;i++)
+              {
+                if(array[i]<array[i-1])
+                {
+                    aux=array[i];
+                    array[i]=array[i-1];
+                    array[i-1]=aux;
+                    cambios=true;
+                }
+              }
+              if(cambios==false)
 
             break;
          case 4:
