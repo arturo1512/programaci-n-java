@@ -1,35 +1,40 @@
 import java.io.*;
 import java.util.*;
-public class Precio{
-private float precio;
-public String lee;
-public float iva;
-public Precio(){
 
-}
-public void getPrice(Precio p){
-	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-	System.out.println("Dame precio de compra con el Distribuidor:");
-	try{
-		lee=br.readLine();
-	precio=Float.parseFloat(lee);
-    
-	}catch(IOException e){
-		System.out.println(e);
+public class Precio {
+	
+	private float precio_compra;
+	private float precio_venta;
+	public static float iva;
+	
+	public Precio() { }
+
+	public void setPriceCompra(float precio) {
+		this.precio_compra = precio;
 	}
 
-}
-public void getConiva(Precio p){
-	p.getPrice(this);
-	System.out.println("El Precio con el Distribuidor es:"+this.precio);
-	this.iva=this.precio+=this.precio*=0.16;
-System.out.println("El precio con iva es:"+this.iva);	
+	public float getPriceCompra() {
+		return this.precio_compra;
+	}
 
-}
-public void imprimir(Precio p){
-	
-	System.out.println("El Precio con iva sera de:"+this.iva);
-}
+	public void setPriceVenta(float precio) {
+		this.precio_venta = precio;
+	}
 
+	public float getPriceVenta() {
+		return this.precio_venta;
+	}
+
+	public float getPriceCompraIVA() {
+		return this.precio_compra * this.iva;
+	}
+
+	public float getPriceVentaIVA() {
+		return this.precio_venta * this.iva;
+	}
+
+	public String toString() {
+		return "Compra: " +  this.precio_compra + "Venta: " + this.precio_venta;
+	}
 
 }

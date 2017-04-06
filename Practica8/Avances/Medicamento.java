@@ -1,62 +1,41 @@
 import java.io.*;
 import java.util.*;
+
 public class Medicamento{
 
-public String captura;
-public String id;
-public String nombreMedicamento;
-public static float precio;
+    private String id;
+    private String nombre;
+    private Precio precio;
 
-public Medicamento(){
-
-}
-public void getNombreMedicamento(Medicamento m){
-	System.out.println("Ingrese nombre del medicamento:");
-    m.leer(this);
-    
+    public Medicamento() { 
+        precio = new Precio();
     }
 
+    public void setId(String id_p) {
+        this.id = id_p;
+    }
 
+    public String getId() {
+        return this.id;
+    }
 
-public void leer(Medicamento m){
-	
-    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-     try{
-     nombreMedicamento=br.readLine();
-     }
-     catch(IOException e){
-     System.out.println(e);
-     }
-}
-public void getPrecio(Medicamento m){
-    System.out.println("Dame el precio de"+this.nombreMedicamento);
-    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-     try{
-     captura=br.readLine();
-     }
-     catch(IOException e){
-     System.out.println(e);
-     }
-    
-    precio=Float.parseFloat(captura);
-    
-}
-public void getId(Medicamento m){
-    System.out.println("Dame el id-numerico:"+this.nombreMedicamento);
-    
-     BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-     try{
-     id=br.readLine();
-     }
-     catch(IOException e){
-     System.out.println(e);
-     }
-}
-public void imprimir(Medicamento m){
-    System.out.println("El medicamento es:"+this.nombreMedicamento);
-    System.out.println("El precio del medicamento es:"+this.precio);
-    System.out.println("El ID_numerico del medicamento es:"+this.id);
-}
+    public void setNombre(String nombre_p) {
+        this.nombre = nombre_p;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public Precio getPrecio() {
+        return this.precio;
+    } 
+
+    public String toString() {
+        return ("El medicamento es:"+this.nombre) +
+        ("El ID_numerico del medicamento es:"+this.id)+
+        ("El precio del medicamento es:"+ this.precio);
+    }
 
 
 }
