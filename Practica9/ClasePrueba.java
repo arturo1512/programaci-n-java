@@ -4,8 +4,10 @@ public class ClasePrueba{
 
 	public static void main(String []args){
 
-		Usuario usuario[] = new Usuario[3];
+		Usuario usuario[] = new Usuario[1];
 		Lector reader = new Lector();
+		
+
 		for(int i=0; i<usuario.length;i++){
 		Usuario usuario1 = new Usuario();
 		System.out.println("Dame el nombre del usuario");
@@ -31,6 +33,9 @@ public class ClasePrueba{
 
 		System.out.println("nickname:");
 		usuario1.setNick(reader.leeString());
+		System.out.println("Password:");
+		usuario1.setPassword(reader.leeString());
+
 		System.out.println("Fecha de nacimiento");
         
         System.out.println("Dia:");
@@ -46,8 +51,15 @@ public class ClasePrueba{
 		System.out.println("LOS DATOS SON:");
 		for (int i = 0; i < usuario.length ; i ++ ) {
 
-    System.out.println(usuario[i]);  
-    
+        System.out.println(usuario[i]);  
   }
+  Usuario usuario2 = new Usuario();
+      System.out.println("Login:");
+      System.out.println("nickname:");
+      usuario1.setInicioNick(reader.leeString());
+      System.out.println("Password:");
+      usuario1.setInicioPassword(reader.leeString());
+  //usuario1.setNick(reader.leeString());
+  
 	}
 }

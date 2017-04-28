@@ -1,22 +1,23 @@
 public class DirectorioUsuarios{
 
      
-
- 	private String usuario = "Arturo";
- 	private String contra = "Artu12--";
-
+   
+ 	public String usuario = "";
+ 	public String contra = "";
+/*
  	public DirectorioUsuarios(){
 
  		String user1 = this.usuario;
  		String cons2 = this.contra;
- 	}
+ 	}*/
 
- 	public void iniciarSesion(String nickname, String contrasenia) {
+
+ 	public void iniciarSesion(String nick_p, String cont_p) {
+ 		ListaUsuario usd = new ListaUsuario();
  		
- 		DirectorioUsuarios du = new DirectorioUsuarios();
 
 
- 		if(nickname.equals(usuario) && contrasenia.equals(contra)){
+ 		if(usuario.equals(nick_p) && contra.equals(cont_p)){
  			System.out.println("Datos correctos");
  			
  		} else

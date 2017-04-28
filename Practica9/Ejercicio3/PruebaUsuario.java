@@ -7,15 +7,13 @@ public class PruebaUsuario{
        DirectorioUsuarios du = new DirectorioUsuarios();
        String nick= "0";
        String cont= "0";
-       String nickname="";
-       String contrasenia="";
-       
-      
+     
        for(int  i = 0; i < lista.length; i++){
 		ListaUsuario usuario = new ListaUsuario();
+
 		System.out.print("Nickname: ");
 		nick = reader.leeString();
-
+        
 		
 		//usuario.iniciarSesion().getUsuario().setNickname(reader.leeString());
 		System.out.println("Contrasenia");
